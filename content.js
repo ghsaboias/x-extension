@@ -88,7 +88,9 @@ async function extractTweet(tweetElement) {
 
   // Extract quoted tweet if present
   let quotedTweet = null;
-  const quotedElement = tweetElement.querySelector('div[role="link"]');
+  const quotedElement = Array.from(
+    tweetElement.querySelectorAll('div[role="link"]')
+  ).find((el) => el.querySelector('div[data-testid="User-Name"]'));
   if (quotedElement) {
     const quotedUserNameElement = quotedElement.querySelector(
       'div[data-testid="User-Name"]'
@@ -97,7 +99,6 @@ async function extractTweet(tweetElement) {
       quotedUserNameElement?.querySelector('div[dir="ltr"] > span')
         ?.textContent || "Unknown";
 
-    // Target the second div child for handle, separator, and timestamp
     const quotedMetaContainer = quotedUserNameElement.children[1];
     const quotedHandleSpan = Array.from(
       quotedMetaContainer.querySelectorAll('div[dir="ltr"] > span')
