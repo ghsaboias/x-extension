@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet Saver",
+  "version": "1.0",
+  "description": "Save tweets from X",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        font-family: "Roboto", sans-serif;
+        padding: 15px;
+        margin: 0;
+        min-width: 350px;
+      }
+      .button-bar {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      .button-container {
+        display: flex;
+        gap: 10px;
+      }
+      button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      button:hover {
+        background-color: #555;
+      }
+      .delete-btn {
+        background-color: #e63946;
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+      .delete-btn:hover {
+        background-color: #f94144;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: #2a2a2a;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+      }
+      li:hover {
+        transform: translateY(-2px);
+      }
+      .tweet-link {
+        color: #e0e0e0;
+        text-decoration: none;
+        display: block;
+      }
+      .link-btn {
+        background-color: #1da1f2;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .media-links {
+        margin: 5px 0px;
+      }
+      .media-links a {
+        color: #1da1f2;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .media-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-bar">
+      <button id="clearTweets">Clear All</button>
+      <button id="exportTweets">Export as JSON</button>
+    </div>
+    <ul id="savedTweets"></ul>
+    <script src="popup.js"></script>
+  </body>
+</html>
