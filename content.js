@@ -34,6 +34,9 @@ function addSaveButtons() {
       saveButton.style.backgroundColor = "#1DA1F2";
     });
     saveButton.addEventListener("click", async () => {
+      saveButton.disabled = true;
+      saveButton.style.backgroundColor = "#34D399"; // Success green color
+      saveButton.innerHTML = "Saved ✓";
       const tweet = await extractTweet(tweetElement);
       saveTweet(tweet);
     });
